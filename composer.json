@@ -1,0 +1,23 @@
+{
+    "name": "hacktoolkit/php-htk",
+    "description": "A set of convenience utils for PHP.",
+    "type": "library",
+    "require": {
+        "php": ">=5.3.0",
+        "rmccue/requests": "^1.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hacktoolkit",
+            "email": "hello@hacktoolkit.com",
+            "homepage": "https://www.hacktoolkit.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Htk\\": "src/"
+        }
+    },
+    "version": "0.1.0"
+}
