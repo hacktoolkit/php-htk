@@ -2,11 +2,19 @@
 
 namespace Htk;
 
-use Htk\Debuggers;
+use Htk\Config;
+use Htk\Debugger;
 
 class Htk {
+    private static $config = null;
+    private static $debugger = null;
+
+    public static function init(array $configArray) {
+        self::$config = new Config($configArray);
+        self::$debugger = new Debugger(self::$config);
+    }
 
     public static function slack_debug($text) {
-        Debuggers:slack_debug($text);
+        self::$debugger->slack_debug($text);
     }
 }

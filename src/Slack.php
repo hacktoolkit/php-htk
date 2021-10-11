@@ -1,19 +1,20 @@
+<?php
+
 namespace Htk;
 
-$SLACK_WEBHOOK_URL = getenv('SLACK_WEBHOOK_URL');
-
+use Requests;
 
 class Slack {
-    function message(
-        $webhook_url=$SLACK_WEBHOOK_URL,
-        $channel=null,
-        $username=null,
-        $text='',
-        $attachments=null,
-        $icon_emoji=null,
-        $unfurl_links=true,
-        $unfurl_media=false,
-        $error_response_handlers=null
+    public static function message(
+        $text,
+        $webhook_url,
+        $channel = null,
+        $username = null,
+        $attachments = null,
+        $icon_emoji = null,
+        $unfurl_links = true,
+        $unfurl_media = false,
+        $error_response_handlers = null
     ) {
         /**Performs a webhook call to Slack
 
@@ -22,10 +23,6 @@ class Slack {
 
            `channel` override must be a public channel
         */
-        if ($webhook_url == null) {
-            throw new Exception('HTK_SLACK_WEBHOOK_URL or SLACK_WEBHOOK_URL not set in ENV');
-        }
-
         $payload = array(
             'text' => $text,
             'unfurl_links' => $unfurl_links,
@@ -45,15 +42,17 @@ class Slack {
             $payload['attachments'] = $attachments;
         }
 
-        $headers = array();
+        $headers = array(
+            'Content-Type' => 'application/json'
+        );
 
-        $response = Requests::post($webhook_url, $headers, $payload);
+        $response = Requests::post($webhook_url, $headers, json_encode($payload));
         if ($response->status_code == 200) {
-            # success case, do nothing
+            // success case, do nothing
         } else if ($response->status_code <= 399) {
-            # 200-300, do nothing
+            // 200-300, do nothing
         } else {
-            //print('Slack webhook call error: [{}] {}'.format(response.status_code, response.content))
+            echo('Slack webhook call error: ['. $response->status_code . '] ' . $response->body);
         }
 
         return $response;
