@@ -18,3 +18,7 @@ composer require hacktoolkit/php-htk
 ## License
 
 MIT
+
+## Releasing and Packaging
+
+https://packagist.org/packages/hacktoolkit/php-htk
