@@ -9,10 +9,15 @@ composer require hacktoolkit/php-htk
 ## How To Use
 
 ```
+require 'vendor/autoload.php';
+
 \Htk\Htk::init([
     'SLACK_WEBHOOK_URL' => 'https://hooks.slack.com/services/your/slack/incoming-webhook-url'
 ]);
 \Htk\Htk::slack_debug('hello world');
+
+// To send to a different channel
+\Htk\Htk::slack_debug('hello world', '#test');
 ```
 
 ## License
