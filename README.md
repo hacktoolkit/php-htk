@@ -21,4 +21,5 @@ MIT
 
 ## Releasing and Packaging
 
-https://packagist.org/packages/hacktoolkit/php-htk
+- Releasing is automatically done via GitHub Actions. See `.github/workflows/create-release.yml`
+- Package information can be found at: https://packagist.org/packages/hacktoolkit/php-htk
