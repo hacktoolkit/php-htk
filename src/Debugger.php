@@ -11,7 +11,11 @@ class Debugger {
         $this->config = $config;
     }
 
-    public function slack_debug($text) {
-        Slack::message($text, $this->config->slack_webhook_url());
+    public function slack_debug($text, $channel = null) {
+        Slack::message(
+            $text,
+            $this->config->slack_webhook_url(),
+            $channel
+        );
     }
 }

@@ -14,7 +14,7 @@ class Htk {
         self::$debugger = new Debugger(self::$config);
     }
 
-    public static function slack_debug($text) {
-        self::$debugger->slack_debug($text);
+    public static function slack_debug($text, $channel = null) {
+        self::$debugger->slack_debug($text, $channel);
     }
 }
