@@ -25,7 +25,7 @@ require 'vendor/autoload.php';
 - C# - https://github.com/hacktoolkit/csharp-htk
 - PHP - https://github.com/hacktoolkit/php-htk
 - Python (full) - https://github.com/hacktoolkit/python-htk
-- Python (lite) - https://github.com/hacktoolkit/pyhtk-lite
+- Python (lite) - https://github.com/hacktoolkit/python-htk-lite
 - Ruby - https://github.com/hacktoolkit/htk-rb
 
 # Authors and Maintainers
