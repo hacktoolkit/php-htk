@@ -20,6 +20,17 @@ require 'vendor/autoload.php';
 \Htk\Htk::slack_debug('hello world', '#test');
 ```
 
+# See Also
+
+- C# - https://github.com/hacktoolkit/csharp-htk
+- Python - https://github.com/hacktoolkit/python-htk
+- Ruby - https://github.com/hacktoolkit/htk-rb
+
+# Authors and Maintainers
+
+- [Hacktoolkit](https://github.com/hacktoolkit)
+- [Jonathan Tsai](https://github.com/jontsai)
+
 ## License
 
 MIT
